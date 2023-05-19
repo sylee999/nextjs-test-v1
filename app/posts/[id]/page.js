@@ -1,5 +1,6 @@
 import { getAllPostIds, getPostData } from '../../../lib/posts'
 import Head from 'next/head'
+import Link from 'next/link'
 import Date from '../../date'
 import styles from '../../styles.module.css'
 
@@ -23,13 +24,4 @@ export default async function Post({ params }) {
       </div>
     </div>
   )
-}
-
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
-  return {
-    props: {
-      postData
-    }
-  }
 }
